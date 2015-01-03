@@ -41,7 +41,7 @@ class ProducesControllerTest < ActionController::TestCase
   end
 
   test "should update produce" do
-    patch :update, id: @produce, produce: @update
+    patch :update, id: @produce, produce: { description: @produce.description, image_url: @produce.image_url, price: @produce.price, title: @produce.title }
     assert_redirected_to produce_path(assigns(:produce))
   end
 
