@@ -3,3 +3,7 @@ class Lampard
     puts 'My name is Lampard'
   end
 end
+
+def noclass
+  puts 'xxx'
+end

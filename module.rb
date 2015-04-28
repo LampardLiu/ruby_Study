@@ -1,7 +1,10 @@
 #require 不支持相对路径，如果需要相对路径需要通过File
 #require  File.expand_path('../temp/module1',__FILE__)
 
-load 'temp/module1.rb'
+load 'module1.rb'
+
+#调用另外一个文件的方法
+noclass
 
 module Login
   MyName = "Lampard"
@@ -29,16 +32,47 @@ end
 # puts loginweb.class
 
 class SuperClass
-  include Login
+  include Lampard
+  #测试模块实例变量
+  @name
+  def name=(value)
+    @name = "#{value}XXX"
+    puts @name
+  end
+
+  def puts_name
+    puts @name
+  end
 end
 
-SuperClass.new.putsMyName
-Lampard.putsMyName
-
-def aa
-  puts 'AA'
+class LowerClass
+  include Lampard
+  def initialize
+    @temp = 4567
+  end  
 end
-aa
+#测试extend
+class ExtendClass
+  extend Lampard
+end
 
-#不会调用另外一个文件中没有放在类或者module的方法
-noclass
+
+# SuperClass.new.putsMyName
+# Lampard.putsMyName
+
+#测试
+superclass = SuperClass.new 
+lowerclass = LowerClass.new 
+
+# puts superclass.print
+# puts lowerclass.print
+
+# superclass.name= 'DaShaBi'
+# superclass.name='XiaoShaBi'
+# superclass.puts_name
+
+lowerclass.puts_temp
+
+puts ExtendClass.print
+
+
