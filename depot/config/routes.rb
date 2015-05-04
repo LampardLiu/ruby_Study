@@ -1,4 +1,7 @@
 Depot::Application.routes.draw do
+  get "book/save"
+  get "book/edit"
+  get "book/:id" => "book#get"
   resources :produces
 
   # The priority is based upon order of creation: first created -> highest priority.

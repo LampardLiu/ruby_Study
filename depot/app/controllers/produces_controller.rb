@@ -49,6 +49,7 @@ class ProducesController < ApplicationController
         format.json { render json: @produce.errors, status: :unprocessable_entity }
       end
     end
+    puts "produce:::::::::::::::::::#{@produce}"
   end
 
   # DELETE /produces/1
