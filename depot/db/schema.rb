@@ -11,24 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504063754) do
+ActiveRecord::Schema.define(version: 20150529082753) do
 
-  create_table "books", force: true do |t|
-    t.string   "name",       limit: 100
-    t.string   "author"
-    t.decimal  "price"
-    t.text     "descript"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "produces", force: true do |t|
+  create_table "products", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image_url"
+    t.string   "image"
     t.decimal  "price",       precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_url"
   end
 
 end

@@ -1,8 +1,5 @@
-Depot::Application.routes.draw do
-  get "book/save"
-  get "book/edit"
-  get "book/:id" => "book#get"
-  resources :produces
+Rails.application.routes.draw do
+  resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -44,7 +41,7 @@ Depot::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
